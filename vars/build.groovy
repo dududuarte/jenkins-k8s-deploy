@@ -1,12 +1,12 @@
 def call(String repoName){
     stage('Building'){
         environment {
-            dockerimagename = "duartemcg/reactapp"
-            registryCredential = 'dockerhublogin'
-            dockerImage = ""
+            def dockerimagename = "duartemcg/reactapp"
+            def registryCredential = 'dockerhublogin'
+            def dockerImage = ""
         }
         sh "cd ${repoName}"
-        dockerImage = docker.build(${dockerimagename})
+        dockerImage = docker.build(dockerimagename)
     }
     stage('Deploying to Docker'){
         environment {
