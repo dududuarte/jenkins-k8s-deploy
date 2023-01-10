@@ -15,4 +15,5 @@ def call(String repoName){
         docker.withRegistry('http://registry.hub.docker.com', registryCredential) {
             dockerImage.push("latest")
         }
+    }
 }
