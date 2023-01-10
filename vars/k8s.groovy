@@ -1,5 +1,5 @@
-def call(){
-    stage('Building'){
+def call(String deployName){
+    stage('Deploying to K8s'){
         //  Se existir fazemos rollback restart
         if(deployName){
             sh """
