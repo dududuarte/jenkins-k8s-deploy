@@ -3,7 +3,7 @@ def call(String repoName){
         def dockerimagename = "duartemcg/reactapp"
         def dockerImage = ""
         sh "cd ${repoName}"
-        dockerImage = docker.build(${env.dockerimagename})
+        dockerImage = docker.build(dockerimagename)
     }
     stage('Deploying to Docker'){
         def registryCredential = 'dockerhublogin'
