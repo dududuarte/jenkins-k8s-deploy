@@ -6,7 +6,7 @@ def call(String repoName){
             def dockerImage = ""
         }
         sh "cd ${repoName}"
-        dockerImage = docker.build(dockerimagename)
+        dockerImage = docker.build(${env.dockerimagename})
     }
     stage('Deploying to Docker'){
         environment {
