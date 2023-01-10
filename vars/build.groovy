@@ -1,7 +1,7 @@
 def call(String repoName){
+    def dockerImage = ""
     stage('Building'){
         def dockerimagename = "duartemcg/reactapp"
-        def dockerImage = ""
         sh "cd ${repoName}"
         dir(path: "./${repoName}"){
             dockerImage = docker.build(dockerimagename)
